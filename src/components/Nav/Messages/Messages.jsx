@@ -1,9 +1,9 @@
 import React from "react";
-import "./Messages.scss";
+import s from "./Messages.module.scss";
 
 const Messages = () => {
     return(
-        <div className="messages"> Messages </div>
+        <div className={s.messages}> Messages </div>
     );
 };
 

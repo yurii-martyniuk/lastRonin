@@ -1,12 +1,13 @@
 import React from "react";
-import "./Body.scss"
+import s from  "./Body.module.scss"
 import CreatePost from "./СreatePost/СreatePost";
-import Post from "./Post/Post";
+import Posts from "./Posts/Posts";
+
 const Body = () => {
     return(
-        <div class="body">
+        <div className={s.body}>
             <CreatePost/>
-            <Post/>
+            <Posts/>
         </div>
     )
 }

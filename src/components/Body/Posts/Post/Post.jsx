@@ -1,15 +1,15 @@
 import React from "react";
-import "./Post.scss"
+import s from "./Post.module.scss"
+
 const Post = () => {
-    return(
-        <div class="post">
-            <p className="title"> My posts </p>
-            <div className="input"><img
+    return (
+        <div class={s.post}>
+            <img
                 src="https://i.mycdn.me/image?id=772267870131&plc=WEB&tkn=*YSv40wtA0PU_n9BjX5eRU0l7sLE&fn=sqr_288"
                 alt="avatar"
-                className="avatarr"
+                className={s.avatar}
             />
-            <span> Hello! </span></div>
+            <span> Hello! </span>
 
         </div>
     )

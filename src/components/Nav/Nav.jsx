@@ -1,5 +1,5 @@
 import React from "react";
-import "./Nav.scss";
+import s from "./Nav.module.scss";
 import Profile from "./Profile/Profile";
 import Messages from "./Messages/Messages";
 

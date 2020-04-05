@@ -1,9 +1,9 @@
 import React from "react";
-import './Avatar.scss';
+import s from './Avatar.module.scss';
 
 const Avatar = () => {
     return(
-     <div className="avatar"></div>
+     <div className={s.avatar}></div>
     )
 }
 

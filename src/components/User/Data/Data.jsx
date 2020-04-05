@@ -1,13 +1,13 @@
 import React from "react";
-import './Data.scss';
+import s from  './Data.module.scss';
 
 const Data = () => {
     return(
-     <div className="data">
-         <div className="name">
+     <div className={s.data}>
+         <div className={s.name}>
              John
          </div>
-         <div className="surname">
+         <div className={s.surname}>
              Cena
          </div>
      </div>

@@ -1,9 +1,9 @@
 import React from "react";
-import "./Profile.scss"
+import s from  "./Profile.module.scss"
 
 const Profile = () => {
     return(
-       <div className="profile active"> Profile </div>
+       <div className={`${s.profile} ${s.active}`}> Profile </div>
     );
 };
 

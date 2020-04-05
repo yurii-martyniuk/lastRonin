@@ -1,0 +1,12 @@
+.messages{
+  width: 50%;
+  text-align: center;
+  transition: .5s;
+  padding: 20px 0;
+  cursor: pointer;
+  border-radius: 5px;
+  &:hover{
+    color: #50b5ff;
+
+  }
+}

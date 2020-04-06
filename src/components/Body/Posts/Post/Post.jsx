@@ -1,7 +1,7 @@
 import React from "react";
 import s from "./Post.module.scss"
 
-const Post = () => {
+const Post = (props) => {
     return (
         <div class={s.post}>
             <img
@@ -9,7 +9,7 @@ const Post = () => {
                 alt="avatar"
                 className={s.avatar}
             />
-            <span> Hello! </span>
+            <span> {props.message} </span>
 
         </div>
     )

@@ -1,0 +1,20 @@
+.senders {
+  width: calc(50% - 5px);
+  margin: 0 5px 0 0;
+  background-color: #1e2745;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  .title{
+    font-size: 18px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #85848e;
+    padding-bottom: 10px;
+  }
+  .items{
+    .item{
+      font-size: 18px;
+      padding: 6px;
+    }
+  }
+}

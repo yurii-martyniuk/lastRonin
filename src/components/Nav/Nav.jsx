@@ -1,13 +1,18 @@
 import React from "react";
 import s from "./Nav.module.scss";
-import Profile from "./Profile/Profile";
-import Messages from "./Messages/Messages";
+import {NavLink} from "react-router-dom";
+// import Profile from "./Profile/Profile";
+// import Messages from "./Messages/Messages";
 
 const Nav = () => {
-    return(
+    return (
         <nav>
-            <Profile/>
-            <Messages/>
+            <NavLink to="/tape" className={s.link} activeClassName={s.active}>
+                Tape
+            </NavLink>
+            <NavLink to="/messenger" className={s.link} activeClassName={s.active}>
+                Messenger
+            </NavLink>
         </nav>
     );
 };

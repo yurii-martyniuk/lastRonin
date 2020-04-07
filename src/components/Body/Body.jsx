@@ -1,17 +1,18 @@
 import React from "react";
 import s from  "./Body.module.scss"
-import CreatePost from "./СreatePost/СreatePost";
-import Posts from "./Posts/Posts";
-import Dialogs from "./Dialogs/Dialogs";
+import Tape from "./Tape/Tape";
+import Messenger from "./Messenger/Messenger";
+import {Route} from "react-router-dom";
 
 const Body = () => {
     return(
-        <div className={s.body}>
-            {/*<CreatePost/>*/}
-           {/* <Posts/>*/}
-            <Dialogs/>
-        </div>
+
+            <div className={s.body}>
+                <Route path="/tape" component={Tape} />
+                <Route path="/messenger"component={Messenger} />
+            </div>
+
     )
-}
+};
 
 export default Body;

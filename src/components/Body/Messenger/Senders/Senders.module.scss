@@ -1,4 +1,5 @@
 .senders {
+  height: fit-content;
   width: calc(50% - 5px);
   margin: 0 5px 0 0;
   background-color: #1e2745;
@@ -12,9 +13,15 @@
     padding-bottom: 10px;
   }
   .items{
+    display: flex;
+    flex-direction: column;
     .item{
       font-size: 18px;
       padding: 6px;
+      color: #85848e;
+      &.active{
+        color: #fff;
+      }
     }
   }
 }

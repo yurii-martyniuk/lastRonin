@@ -8,6 +8,7 @@ const Body = () => {
     return(
 
             <div className={s.body}>
+                <Route exact path="/" component={Tape} />
                 <Route path="/tape" component={Tape} />
                 <Route path="/messenger"component={Messenger} />
             </div>

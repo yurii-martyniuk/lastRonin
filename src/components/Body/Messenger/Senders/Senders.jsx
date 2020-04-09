@@ -2,11 +2,15 @@ import React from "react";
 import s from "./Senders.module.scss"
 import {NavLink} from "react-router-dom";
 
-const Sender = (props) => {
-    return(
-        <NavLink to={`${"/messenger/"}${props.id}`}  className={s.item} activeClassName={s.active}>{props.name}</NavLink>
-    )
-}
+let senderData = [
+    {id : 1, name : "Petr"},
+    {id : 2, name : "Alex"},
+    {id : 3, name : "Johan"},
+];
+
+let sender = senderData.map(
+    i =>  <NavLink to={`${"/messenger/"}${i.id}`}  className={s.item} activeClassName={s.active}>{i.name}</NavLink>
+)
 
 const Senders = () => {
     return(
@@ -15,9 +19,7 @@ const Senders = () => {
           <p className={s.title}> SENDERS: </p>
 
           <div className={s.items}>
-              <Sender id="1" name="Petr"/>
-              <Sender id="2" name="Alex"/>
-              <Sender id="3" name="Johan"/>
+              {sender}
           </div>
       </div>
     );

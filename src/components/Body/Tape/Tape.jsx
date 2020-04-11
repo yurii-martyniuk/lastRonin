@@ -4,11 +4,11 @@ import CreatePost from "./СreatePost/СreatePost";
 
 import s from "./Tape.module.scss"
 
-const Tape = () => {
+const Tape = (props) => {
     return(
         <div className={s.tape}>
             <CreatePost/>
-            <Posts/>
+            <Posts messageData={props.messageData}/>
         </div>        
     );
 };

@@ -6,14 +6,22 @@ import User from "./components/User/User";
 import Nav from "./components/Nav/Nav";
 import {BrowserRouter} from "react-router-dom";
 
-const App = () => {
+
+
+
+
+const App = (props) => {
     return (
         <BrowserRouter>
             <div className="App">
                 <Header/>
                 <User/>
                 <Nav/>
-                <Body/>
+                <Body
+                    dialogData={props.state.messenger.dialogData}
+                    senderData={props.state.messenger.senderData}
+                    messageData={props.state.tape.messageData}
+                />
             </div>
         </BrowserRouter>
     );

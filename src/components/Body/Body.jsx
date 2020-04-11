@@ -4,13 +4,19 @@ import Tape from "./Tape/Tape";
 import Messenger from "./Messenger/Messenger";
 import {Route} from "react-router-dom";
 
-const Body = () => {
-    return(
 
+
+const Body = (props) => {
+    return(
             <div className={s.body}>
-                <Route exact path="/" component={Tape} />
-                <Route path="/tape" component={Tape} />
-                <Route path="/messenger"component={Messenger} />
+                {/*<Route exact path="/" component={Tape} />*/}
+                <Route path="/tape" render={ () => <Tape
+                    messageData={props.messageData}
+                />} />
+                <Route path="/messenger" render={ () => <Messenger
+                    dialogData={props.dialogData}
+                    senderData={props.senderData}
+                />} />
             </div>
 
     )

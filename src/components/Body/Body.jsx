@@ -12,6 +12,7 @@ const Body = (props) => {
                 {/*<Route exact path="/" component={Tape} />*/}
                 <Route path="/tape" render={ () => <Tape
                     messageData={props.messageData}
+                    createPost={props.createPost}
                 />} />
                 <Route path="/messenger" render={ () => <Messenger
                     dialogData={props.dialogData}

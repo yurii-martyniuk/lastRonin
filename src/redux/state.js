@@ -1,3 +1,5 @@
+import {rerenderTree} from "../render";
+
 let state = {
     messenger: {
         dialogData : [
@@ -22,5 +24,16 @@ let state = {
         ]
     }
 }
+
+export let createPost = (text) => {
+    debugger;
+    let textData = {
+        message: text
+    };
+    state.tape.messageData.push(textData)
+    rerenderTree(state);
+};
+
+
 
 export default state;

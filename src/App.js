@@ -7,10 +7,8 @@ import Nav from "./components/Nav/Nav";
 import {BrowserRouter} from "react-router-dom";
 
 
-
-
-
 const App = (props) => {
+
     return (
         <BrowserRouter>
             <div className="App">
@@ -21,6 +19,7 @@ const App = (props) => {
                     dialogData={props.state.messenger.dialogData}
                     senderData={props.state.messenger.senderData}
                     messageData={props.state.tape.messageData}
+                    createPost={props.createPost}
                 />
             </div>
         </BrowserRouter>

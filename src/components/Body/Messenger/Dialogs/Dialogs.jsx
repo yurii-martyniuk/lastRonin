@@ -7,6 +7,13 @@ const Dialogs = (props) => {
         d => <div className={s.item}>{d.dialog}</div>
     );
 
+    let text = React.createRef();
+
+    let alertText = () => {
+        let addText = text.current.value;
+        alert(addText);
+    }
+
     return(
       <div className={s.dialogs}>
           <p className={s.title}> DIALOGS! </p>
@@ -14,7 +21,10 @@ const Dialogs = (props) => {
           <div className={s.items}>
               {dialogs}
           </div>
+          <textarea ref={text}></textarea>
+          <button onClick={alertText}>DD</button>
       </div>
+
     );
 };
 

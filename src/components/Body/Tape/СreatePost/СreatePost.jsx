@@ -1,6 +1,19 @@
 import React from "react";
 import s from "./СreatePost.module.scss"
-const CreatePost = () => {
+
+
+const CreatePost = (props) => {
+
+    let text = React.createRef();
+
+
+    let alertText = () => {
+        debugger;
+        let textData = text.current.value;
+        props.createPost(textData);
+        text.current.value = '';
+    }
+
     return(
         <div className={s.createPost}>
             <p className={s.title}> Create Post </p>
@@ -10,7 +23,8 @@ const CreatePost = () => {
                 className={s.avatar}
             />
             <span> Write something here: </span></div>
-
+            <textarea ref={text}> </textarea>
+            <button onClick={alertText}>DD</button>
         </div>
     )
 }

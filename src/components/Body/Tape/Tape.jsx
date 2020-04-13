@@ -7,8 +7,12 @@ import s from "./Tape.module.scss"
 const Tape = (props) => {
     return(
         <div className={s.tape}>
-            <CreatePost/>
-            <Posts messageData={props.messageData}/>
+            <CreatePost
+                createPost={props.createPost}
+            />
+            <Posts
+                messageData={props.messageData}
+            />
         </div>        
     );
 };

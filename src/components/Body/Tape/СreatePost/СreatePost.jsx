@@ -1,17 +1,20 @@
 import React from "react";
 import s from "./СreatePost.module.scss"
+import {onChangePost} from "../../../../redux/state";
+import App from "../../../../App";
 
 
 const CreatePost = (props) => {
 
     let text = React.createRef();
-
-
     let alertText = () => {
-        debugger;
+        props.createPost();
+        props.onChangePost('');
+    }
+
+    let onChangeArea = () => {
         let textData = text.current.value;
-        props.createPost(textData);
-        text.current.value = '';
+        props.onChangePost(textData);
     }
 
     return(
@@ -23,8 +26,17 @@ const CreatePost = (props) => {
                 className={s.avatar}
             />
             <span> Write something here: </span></div>
-            <textarea ref={text}> </textarea>
-            <button onClick={alertText}>DD</button>
+            <textarea
+                ref={text}
+                onChange={onChangeArea}
+                value={props.newPostText}
+            >
+
+
+            </textarea>
+            <button
+                onClick={alertText}
+            >DD</button>
         </div>
     )
 }

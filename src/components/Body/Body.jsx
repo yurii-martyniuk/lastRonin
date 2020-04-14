@@ -3,6 +3,8 @@ import s from  "./Body.module.scss"
 import Tape from "./Tape/Tape";
 import Messenger from "./Messenger/Messenger";
 import {Route} from "react-router-dom";
+import {onChangePost} from "../../redux/state";
+import App from "../../App";
 
 
 
@@ -12,7 +14,9 @@ const Body = (props) => {
                 {/*<Route exact path="/" component={Tape} />*/}
                 <Route path="/tape" render={ () => <Tape
                     messageData={props.messageData}
+                    newPostText={props.newPostText}
                     createPost={props.createPost}
+                    onChangePost={props.onChangePost}
                 />} />
                 <Route path="/messenger" render={ () => <Messenger
                     dialogData={props.dialogData}

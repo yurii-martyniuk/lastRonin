@@ -21,18 +21,26 @@ let state = {
             {message: "Hi, I just try to use props"},
             {message: "And here too!"},
             {message: "It's all for New Balance"}
-        ]
+        ],
+        newPostText : ''
     }
 }
 
-export let createPost = (text) => {
-    debugger;
+window.state = state;
+
+export let createPost = () => {
+
     let textData = {
-        message: text
+        message: state.tape.newPostText
     };
     state.tape.messageData.push(textData)
     rerenderTree(state);
 };
+
+export let onChangePost = (text) => {
+    state.tape.newPostText = text;
+    rerenderTree(state);
+}
 
 
 

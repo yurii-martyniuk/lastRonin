@@ -5,6 +5,7 @@ import Body from "./components/Body/Body";
 import User from "./components/User/User";
 import Nav from "./components/Nav/Nav";
 import {BrowserRouter} from "react-router-dom";
+import {onChangePost} from "./redux/state";
 
 
 const App = (props) => {
@@ -19,7 +20,9 @@ const App = (props) => {
                     dialogData={props.state.messenger.dialogData}
                     senderData={props.state.messenger.senderData}
                     messageData={props.state.tape.messageData}
+                    newPostText={props.state.tape.newPostText}
                     createPost={props.createPost}
+                    onChangePost={props.onChangePost}
                 />
             </div>
         </BrowserRouter>

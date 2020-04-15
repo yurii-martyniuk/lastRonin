@@ -1,11 +1,33 @@
 import React from 'react';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import {rerenderTree} from "./render";
-import state from "./redux/state";
+import store from "./redux/state";
+import ReactDOM from "react-dom";
+import App from "./App";
 
 
-rerenderTree(state);
+export let rerenderTree = (state) => {
+    ReactDOM.render(
+        <React.StrictMode>
+            <App
+                state={state}
+                createPost={store.createPost.bind(store)}
+                onChangePost={store.onChangePost.bind(store)}
+            />
+        </React.StrictMode>,
+        document.getElementById('root')
+    );
+
+}
+
+rerenderTree(store.getState());
+store.subscribe(rerenderTree);
+
+
+
+
+
+// eslint-disable-next-line no-undef
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

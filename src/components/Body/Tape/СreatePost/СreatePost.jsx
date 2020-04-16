@@ -1,20 +1,23 @@
 import React from "react";
 import s from "./СreatePost.module.scss"
-import {onChangePost} from "../../../../redux/state";
-import App from "../../../../App";
+import {addNewPost, onChangeTextArea} from "../../../../redux/state";
+
 
 
 const CreatePost = (props) => {
 
     let text = React.createRef();
     let alertText = () => {
-        props.createPost();
-        props.onChangePost('');
+
+        props.dispatch(addNewPost());
     }
+
 
     let onChangeArea = () => {
         let textData = text.current.value;
-        props.onChangePost(textData);
+
+        props.dispatch(onChangeTextArea(textData));
+
     }
 
     return(
@@ -36,7 +39,7 @@ const CreatePost = (props) => {
             </textarea>
             <button
                 onClick={alertText}
-            >DD</button>
+            >ADD</button>
         </div>
     )
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import s from "./Dialogs.module.scss"
+import {addNewMessage, updateMessageArea} from "../../../../redux/state";
 
 const Dialogs = (props) => {
 
@@ -9,9 +10,13 @@ const Dialogs = (props) => {
 
     let text = React.createRef();
 
-    let alertText = () => {
+    let addMessage = () => {
+        props.dispatch(addNewMessage())
+    }
+
+    let updateText = () => {
         let addText = text.current.value;
-        alert(addText);
+        props.dispatch(updateMessageArea(addText))
     }
 
     return(
@@ -21,8 +26,14 @@ const Dialogs = (props) => {
           <div className={s.items}>
               {dialogs}
           </div>
-          <textarea ref={text}></textarea>
-          <button onClick={alertText}>DD</button>
+          <textarea
+              ref={text}
+              onChange={updateText}
+              value={props.newMessageData}
+          >
+
+          </textarea>
+          <button onClick={addMessage}>DD</button>
       </div>
 
     );

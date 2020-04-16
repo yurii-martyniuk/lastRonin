@@ -11,8 +11,7 @@ export let rerenderTree = (state) => {
         <React.StrictMode>
             <App
                 state={state}
-                createPost={store.createPost.bind(store)}
-                onChangePost={store.onChangePost.bind(store)}
+                dispatch={store.dispatch.bind(store)}
             />
         </React.StrictMode>,
         document.getElementById('root')

@@ -1,3 +1,11 @@
+import messengerReducer from "./messenger-reducer";
+import tapeReducer from "./tape-reducer";
+
+const CREATE_POST = "CREATE_POST";
+const CHANGE_POST = 'CHANGE_POST';
+const UPDATE_MESSAGE_AREA = 'UPDATE_MESSAGE_AREA';
+const ADD_NEW_MESSAGE = 'ADD_NEW_MESSAGE';
+
 let store = {
     _state: {
         messenger: {
@@ -8,6 +16,7 @@ let store = {
                 {dialog: 'I hope, that it will be easy like this'},
                 {dialog: 'See you soon!'},
             ],
+            newMessageData : '',
             senderData: [
                 {id: 1, name: "Petr"},
                 {id: 2, name: "Alex"},
@@ -30,20 +39,40 @@ let store = {
     _rerenderTree(){
         console.log("rerender!")
     },
-    createPost() {
-
-        let textData = {
-            message: this._state.tape.newPostText
-        };
-        this._state.tape.messageData.push(textData)
-        this._rerenderTree(this._state);
-    },
-    onChangePost(text) {
-        this._state.tape.newPostText = text;
-        this._rerenderTree(this._state);
-    },
     subscribe(observer) {
         this._rerenderTree = observer
+    },
+    dispatch(action) {
+        this._state.messenger = messengerReducer(this._state.messenger, action)
+        this._state.tape = tapeReducer(this._state.tape, action)
+
+        this._rerenderTree(this._state);
+    }
+
+
+}
+
+
+export const addNewPost = () => {
+    return{
+        type: CREATE_POST
+    };
+}
+export const  onChangeTextArea = (textData) => {
+    return {
+        type : CHANGE_POST,
+        text: textData
+    };
+}
+export const updateMessageArea = (textData) => {
+    return{
+        type: UPDATE_MESSAGE_AREA,
+        text: textData
+    }
+}
+export const addNewMessage = () => {
+    return {
+        type: ADD_NEW_MESSAGE
     }
 }
 

@@ -15,12 +15,13 @@ const Body = (props) => {
                 <Route path="/tape" render={ () => <Tape
                     messageData={props.messageData}
                     newPostText={props.newPostText}
-                    createPost={props.createPost}
-                    onChangePost={props.onChangePost}
+                    dispatch={props.dispatch}
                 />} />
                 <Route path="/messenger" render={ () => <Messenger
                     dialogData={props.dialogData}
+                    newMessageData={props.newMessageData}
                     senderData={props.senderData}
+                    dispatch={props.dispatch}
                 />} />
             </div>
 

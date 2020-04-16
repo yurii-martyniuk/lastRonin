@@ -10,8 +10,7 @@ const Tape = (props) => {
     return(
         <div className={s.tape}>
             <CreatePost
-                createPost={props.createPost}
-                onChangePost={props.onChangePost}
+                dispatch={props.dispatch}
                 newPostText={props.newPostText}
             />
             <Posts

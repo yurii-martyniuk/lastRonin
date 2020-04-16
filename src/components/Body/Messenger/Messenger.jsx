@@ -9,7 +9,11 @@ const Messenger = (props) => {
     return(
         <div className={s.messenger}>
             <Senders senderData={props.senderData}/>
-            <Dialogs dialogData={props.dialogData}/>
+            <Dialogs
+                dialogData={props.dialogData}
+                newMessageData={props.newMessageData}
+                dispatch={props.dispatch}
+            />
         </div>
     )
 };

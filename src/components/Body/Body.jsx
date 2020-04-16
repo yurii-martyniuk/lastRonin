@@ -3,7 +3,7 @@ import s from  "./Body.module.scss"
 import Tape from "./Tape/Tape";
 import Messenger from "./Messenger/Messenger";
 import {Route} from "react-router-dom";
-import {onChangePost} from "../../redux/state";
+import {onChangePost} from "../../redux/store";
 import App from "../../App";
 
 

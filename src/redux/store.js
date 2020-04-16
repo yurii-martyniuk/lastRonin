@@ -1,11 +1,6 @@
 import messengerReducer from "./messenger-reducer";
 import tapeReducer from "./tape-reducer";
 
-const CREATE_POST = "CREATE_POST";
-const CHANGE_POST = 'CHANGE_POST';
-const UPDATE_MESSAGE_AREA = 'UPDATE_MESSAGE_AREA';
-const ADD_NEW_MESSAGE = 'ADD_NEW_MESSAGE';
-
 let store = {
     _state: {
         messenger: {
@@ -53,28 +48,7 @@ let store = {
 }
 
 
-export const addNewPost = () => {
-    return{
-        type: CREATE_POST
-    };
-}
-export const  onChangeTextArea = (textData) => {
-    return {
-        type : CHANGE_POST,
-        text: textData
-    };
-}
-export const updateMessageArea = (textData) => {
-    return{
-        type: UPDATE_MESSAGE_AREA,
-        text: textData
-    }
-}
-export const addNewMessage = () => {
-    return {
-        type: ADD_NEW_MESSAGE
-    }
-}
+
 
 
 export default store;

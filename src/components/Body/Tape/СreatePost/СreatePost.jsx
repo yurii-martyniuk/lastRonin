@@ -1,6 +1,6 @@
 import React from "react";
 import s from "./СreatePost.module.scss"
-import {addNewPost, onChangeTextArea} from "../../../../redux/state";
+import {addNewPost, onChangeTextArea} from "../../../../redux/tape-reducer";
 
 
 

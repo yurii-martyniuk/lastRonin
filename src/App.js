@@ -5,7 +5,7 @@ import Body from "./components/Body/Body";
 import User from "./components/User/User";
 import Nav from "./components/Nav/Nav";
 import {BrowserRouter} from "react-router-dom";
-import store, {onChangePost} from "./redux/state";
+import store, {onChangePost} from "./redux/store";
 
 
 const App = (props) => {

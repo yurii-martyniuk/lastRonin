@@ -1,6 +1,6 @@
 import React from "react";
 import s from "./Dialogs.module.scss"
-import {addNewMessage, updateMessageArea} from "../../../../redux/state";
+import {addNewMessage, updateMessageArea} from "../../../../redux/messenger-reducer";
 
 const Dialogs = (props) => {
 

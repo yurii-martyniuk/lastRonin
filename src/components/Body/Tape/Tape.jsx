@@ -3,7 +3,7 @@ import Posts from "./Posts/Posts";
 import CreatePost from "./СreatePost/СreatePost";
 
 import s from "./Tape.module.scss"
-import {onChangePost} from "../../../redux/state";
+import {onChangePost} from "../../../redux/store";
 import App from "../../../App";
 
 const Tape = (props) => {

@@ -1,22 +1,22 @@
 import React from "react";
 import s from "./Dialogs.module.scss"
-import {addNewMessage, updateMessageArea} from "../../../../redux/messenger-reducer";
 
 const Dialogs = (props) => {
 
+    debugger
     let dialogs = props.dialogData.map(
         d => <div className={s.item}>{d.dialog}</div>
     );
 
     let text = React.createRef();
 
-    let addMessage = () => {
-        props.dispatch(addNewMessage())
+    let addMessageToTheDialog = () => { //добавляет значение полученые с changingWatcher в state
+        props.addNewMessage();
     }
 
-    let updateText = () => {
+    let changingWatcher = () => {  //наблюдает за изменениями в textarea
         let addText = text.current.value;
-        props.dispatch(updateMessageArea(addText))
+        props.updateMessageArea(addText);
     }
 
     return(
@@ -28,15 +28,16 @@ const Dialogs = (props) => {
           </div>
           <textarea
               ref={text}
-              onChange={updateText}
+              onChange={changingWatcher}
               value={props.newMessageData}
           >
 
           </textarea>
-          <button onClick={addMessage}>DD</button>
+          <button onClick={addMessageToTheDialog}>DD</button>
       </div>
 
     );
 };
+
 
 export default Dialogs;

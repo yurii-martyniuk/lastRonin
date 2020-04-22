@@ -1,20 +1,16 @@
 import React from "react";
 import Posts from "./Posts/Posts";
-import CreatePost from "./СreatePost/СreatePost";
-
 import s from "./Tape.module.scss"
-import {onChangePost} from "../../../redux/store";
-import App from "../../../App";
+import CreatePostContainer from "./СreatePost/СreatePostContainer";
 
 const Tape = (props) => {
     return(
         <div className={s.tape}>
-            <CreatePost
-                dispatch={props.dispatch}
-                newPostText={props.newPostText}
+            <CreatePostContainer
+                store={props.store}
             />
             <Posts
-                messageData={props.messageData}
+                store={props.store}
             />
         </div>        
     );

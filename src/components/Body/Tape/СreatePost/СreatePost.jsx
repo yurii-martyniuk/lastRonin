@@ -7,16 +7,17 @@ import {addNewPost, onChangeTextArea} from "../../../../redux/tape-reducer";
 const CreatePost = (props) => {
 
     let text = React.createRef();
-    let alertText = () => {
 
-        props.dispatch(addNewPost());
+
+    let alertText = () => {
+        props.addNewPost();
     }
 
 
     let onChangeArea = () => {
         let textData = text.current.value;
 
-        props.dispatch(onChangeTextArea(textData));
+        props.onChangeTextArea(textData);
 
     }
 

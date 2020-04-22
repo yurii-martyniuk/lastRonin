@@ -8,7 +8,9 @@ import {NavLink} from "react-router-dom";
 
 const Senders = (props) => {
 
-    let sender = props.senderData.map(
+    debugger
+    let state = props.store.getState();
+    let sender = state.messenger.senderData.map(
         i =>  <NavLink to={`${"/messenger/"}${i.id}`}  className={s.item} activeClassName={s.active}>{i.name}</NavLink>
     )
     return(

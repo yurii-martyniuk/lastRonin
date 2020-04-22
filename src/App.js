@@ -17,12 +17,7 @@ const App = (props) => {
                 <User/>
                 <Nav/>
                 <Body
-                    dialogData={props.state.messenger.dialogData}
-                    senderData={props.state.messenger.senderData}
-                    newMessageData={props.state.messenger.newMessageData}
-                    messageData={props.state.tape.messageData}
-                    newPostText={props.state.tape.newPostText}
-                    dispatch={props.dispatch}
+                    store={props.store}
                 />
             </div>
         </BrowserRouter>

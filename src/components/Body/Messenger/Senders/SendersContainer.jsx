@@ -1,23 +1,16 @@
 import React from "react";
 import Senders from "./Senders";
-import StoreContext from "../../../../redux/StoreContext";
+import {connect} from "react-redux";
 
-const SendersContainer = () => {
-    return(
-        <StoreContext.Consumer>
-            {
-                (store) => {
-                    let state = store.getState();
-                    return(
-                        <Senders
-                            state = {state}
-                        />
-                    );
-                }
 
-            }
-        </StoreContext.Consumer>
-    )
-};
 
+let mapStateToProps = (state) => {
+    return{
+        state: state
+    }
+}
+
+
+
+const SendersContainer = connect(mapStateToProps, {})(Senders)
 export default SendersContainer;

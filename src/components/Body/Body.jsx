@@ -11,12 +11,14 @@ import App from "../../App";
 const Body = (props) => {
     return(
             <div className={s.body}>
-                <Route path="/tape" render={ () => <Tape
-                    store={props.store}
-                />} />
-                <Route path="/messenger" render={ () => <Messenger
-                    store={props.store}
-                />} />
+                <Route
+                    path="/tape"
+                    render={ () => <Tape/>}
+                />
+                <Route
+                    path="/messenger"
+                    render={ () => <Messenger/>}
+                />
             </div>
 
     )

@@ -4,9 +4,7 @@ import Post from "./Post/Post";
 
 const Posts = (props) => {
 
-    let state = props.store.getState();
-
-    let message = state.tape.messageData.map(
+    let message = props.state.tape.messageData.map(
         m => <Post message={m.message}/>
     )
     return (

@@ -4,16 +4,14 @@ import * as serviceWorker from './serviceWorker';
 import store from "./redux/redux-store";
 import ReactDOM from "react-dom";
 import App from "./App";
+import StoreContext from "./redux/StoreContext";
 
 
 export let rerenderTree = (state) => {
     ReactDOM.render(
-            <App
-                store={store}
-                state={state}
-                dispatch={store.dispatch.bind(store)}
-
-            />,
+        <StoreContext.Provider value={store}>
+            <App/>
+        </StoreContext.Provider>,
         document.getElementById('root')
     );
 
@@ -23,9 +21,6 @@ rerenderTree(store.getState());
 store.subscribe(() => {
     rerenderTree(store.getState());
 });
-
-
-
 
 
 // eslint-disable-next-line no-undef

@@ -16,9 +16,7 @@ const App = (props) => {
                 <Header/>
                 <User/>
                 <Nav/>
-                <Body
-                    store={props.store}
-                />
+                <Body/>
             </div>
         </BrowserRouter>
     );

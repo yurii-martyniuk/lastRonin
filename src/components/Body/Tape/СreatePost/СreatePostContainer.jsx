@@ -1,29 +1,38 @@
 import React from "react";
 import {addNewPost, onChangeTextArea} from "../../../../redux/tape-reducer";
 import CreatePost from "./СreatePost";
+import StoreContext from "../../../../redux/StoreContext";
 
 
-
-const CreatePostContainer = (props) => {
-    let state = props.store.getState();
-
-    let alertText = () => {
-        props.store.dispatch(addNewPost());
-    }
+const CreatePostContainer = () => {
 
 
-    let onChangeArea = (textData) => {
-        props.store.dispatch(onChangeTextArea(textData));
+    return (
+        <StoreContext.Consumer>
+            {store => {
+                let alertText = () => {
+                    store.dispatch(addNewPost());
+                }
 
-    }
 
-    return(
-       <CreatePost
-           addNewPost={alertText}
-           onChangeTextArea={onChangeArea}
-           newPostText={state.tape.newPostText}
-       />
+                let onChangeArea = (textData) => {
+                    store.dispatch(onChangeTextArea(textData));
+
+                }
+                return (
+                    <CreatePost
+                        addNewPost={alertText}
+                        onChangeTextArea={onChangeArea}
+                        newPostText={store.getState().tape.newPostText}
+                    />
+                )
+
+            }
+            }
+
+        </StoreContext.Consumer>
     )
+
 }
 
 export default CreatePostContainer;

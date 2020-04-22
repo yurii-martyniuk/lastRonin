@@ -1,17 +1,15 @@
 import React from "react";
 import s from "./Messenger.module.scss"
-import Senders from "./Senders/Senders";
 import DialogsContainer from "./Dialogs/DialogsContainer";
+import SendersContainer from "./Senders/SendersContainer";
 
 
 
 const Messenger = (props) => {
     return(
         <div className={s.messenger}>
-            <Senders store={props.store}/>
-            <DialogsContainer
-                store={props.store}
-            />
+            <SendersContainer/>
+            <DialogsContainer/>
         </div>
     )
 };

@@ -7,22 +7,12 @@ import App from "./App";
 import {Provider} from "react-redux";
 
 
-
-
-export let rerenderTree = (state) => {
-    ReactDOM.render(
-        <Provider store={store}>
-            <App/>
-        </Provider>,
-        document.getElementById('root')
-    );
-
-}
-
-rerenderTree(store.getState());
-store.subscribe(() => {
-    rerenderTree(store.getState());
-});
+ReactDOM.render(
+    <Provider store={store}>
+        <App/>
+    </Provider>,
+    document.getElementById('root')
+);
 
 
 // eslint-disable-next-line no-undef

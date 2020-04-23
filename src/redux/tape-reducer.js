@@ -12,16 +12,24 @@ let initialState = {
 
 const tapeReducer = (state = initialState, action) => {
     switch (action.type) {
-        case CREATE_POST:
+        case CREATE_POST: {
             let textData = {
                 message: state.newPostText
             };
-            state.messageData.push(textData);
-            state.newPostText = '';
-            return state;
-        case CHANGE_POST:
-            state.newPostText = action.text;
-            return state;
+            let stateCopy = {...state}
+            stateCopy.messageData = [...state.messageData];
+            stateCopy.messageData.push(textData);
+            stateCopy.newPostText = '';
+            return stateCopy;
+        }
+
+        case CHANGE_POST: {
+            let stateCopy = {...state}
+
+            stateCopy.newPostText = action.text;
+            return stateCopy;
+        }
+
         default:
             return state;
     }

@@ -5,7 +5,7 @@ import {addNewPost, onChangeTextArea} from "../../../../redux/tape-reducer";
 
 
 const CreatePost = (props) => {
-
+    console.log(props)
     let text = React.createRef();
 
 

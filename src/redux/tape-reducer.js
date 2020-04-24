@@ -17,6 +17,7 @@ const tapeReducer = (state = initialState, action) => {
                 message: state.newPostText
             };
             let stateCopy = {...state}
+
             stateCopy.messageData = [...state.messageData];
             stateCopy.messageData.push(textData);
             stateCopy.newPostText = '';

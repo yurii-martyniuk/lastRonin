@@ -5,7 +5,7 @@ import {connect} from "react-redux";
 
 let mapStateToProps = (state) => {
     return {
-        newPostText: state.newPostText
+        newPostText: state.tape.newPostText
     }
 }
 

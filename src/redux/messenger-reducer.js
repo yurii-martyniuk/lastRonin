@@ -20,21 +20,22 @@ let initialState = {
 const  messengerReducer = (state=initialState, action) => {
     switch (action.type) {
         case UPDATE_MESSAGE_AREA: {
-            let copyState = {...state}
-            copyState.newMessageData = action.text
-            return copyState
+            return {
+                ...state,
+                newMessageData: action.text
+            }
         }
 
         case ADD_NEW_MESSAGE:{
             let newMessage = {
                 dialog : state.newMessageData
             };
-            let copyState = {...state}
+            return{
+                ...state,
+                dialogData: [...state.dialogData, newMessage],
+                newMessageData: ''
+            }
 
-            copyState.dialogData = [...state.dialogData]
-            copyState.dialogData.push(newMessage)
-            copyState.newMessageData = ''
-            return copyState
         }
 
         default:

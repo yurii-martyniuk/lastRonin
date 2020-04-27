@@ -3,8 +3,8 @@ import s from  "./Body.module.scss"
 import Tape from "./Tape/Tape";
 import Messenger from "./Messenger/Messenger";
 import {Route} from "react-router-dom";
-import {onChangePost} from "../../redux/store";
-import App from "../../App";
+import UsersContainer from "../Nav/Users/UsersContainer";
+
 
 
 
@@ -18,6 +18,10 @@ const Body = (props) => {
                 <Route
                     path="/messenger"
                     render={ () => <Messenger/>}
+                />
+                <Route
+                    path="/users"
+                    render={ () => <UsersContainer/>}
                 />
             </div>
 

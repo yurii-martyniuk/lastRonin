@@ -13,6 +13,9 @@ const Nav = () => {
             <NavLink to="/messenger" className={s.link} activeClassName={s.active}>
                 Messenger
             </NavLink>
+            <NavLink to="/users" className={s.link} activeClassName={s.active}>
+                Users
+            </NavLink>
         </nav>
     );
 };

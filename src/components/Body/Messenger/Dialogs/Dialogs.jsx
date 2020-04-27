@@ -3,7 +3,7 @@ import s from "./Dialogs.module.scss"
 
 const Dialogs = (props) => {
 
-    debugger
+
     let dialogs = props.dialogData.map(
         d => <div className={s.item}>{d.dialog}</div>
     );

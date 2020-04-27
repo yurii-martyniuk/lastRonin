@@ -3,9 +3,6 @@ import {addNewMessage, updateMessageArea} from "../../../../redux/messenger-redu
 import Dialogs from "./Dialogs";
 import {connect} from "react-redux";
 
-
-
-
 let mapStateToProps = (state) => {
     return{
         dialogData : state.messenger.dialogData,
